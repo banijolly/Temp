@@ -63,11 +63,6 @@
         "type": "categorical"
       },
       {
-        "key": "subclade_membership",
-        "title": "Subclade",
-        "type": "categorical"
-      },
-      {
         "key": "recency",
         "scale": [
           [
@@ -80,6 +75,11 @@
           ]
         ],
         "title": "Submission Date",
+        "type": "categorical"
+      },
+      {
+        "key": "subclade_membership",
+        "title": "Subclade",
         "type": "categorical"
       }
     ],
