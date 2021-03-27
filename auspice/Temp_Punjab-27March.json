@@ -79,11 +79,6 @@
         "type": "continuous"
       },
       {
-        "key": "legacy_clade_membership",
-        "title": "New Nextstrain Clade",
-        "type": "categorical"
-      },
-      {
         "key": "recency",
         "scale": [
           [
@@ -97,6 +92,11 @@
       {
         "key": "subclade_membership",
         "title": "Subclade",
+        "type": "categorical"
+      },
+      {
+        "key": "legacy_clade_membership",
+        "title": "New Nextstrain Clade",
         "type": "categorical"
       }
     ],
@@ -228,6 +228,39 @@
       }
     },
     "geo_resolutions": [
+      {
+        "demes": {
+          "Amritsar": {
+            "latitude": 31.6343083,
+            "longitude": 74.8736788
+          },
+          "Jalandhar": {
+            "latitude": 31.2920107,
+            "longitude": 75.5680577
+          },
+          "Ludhiana": {
+            "latitude": 30.9090157,
+            "longitude": 75.851601
+          },
+          "Mansa": {
+            "latitude": 29.8769971,
+            "longitude": 75.4889866
+          },
+          "Patiala": {
+            "latitude": 30.2090874,
+            "longitude": 76.3398721
+          },
+          "SBS Nagar": {
+            "latitude": 30.880634,
+            "longitude": 75.8139597
+          },
+          "Sangrur": {
+            "latitude": 30.2093363,
+            "longitude": 75.8184224
+          }
+        },
+        "key": "district"
+      },
       {
         "demes": {
           "Punjab": {
