@@ -147,7 +147,7 @@
 "scale": [
 [
 "Unknown ",
-"#999999"
+"#fa6437"
 ],
 [
 "Israel",
@@ -287,7 +287,7 @@
 ],
 [
 "United Kingdom",
-"#C1BA47"
+"#e7c5e8"
 ],
 [
 "France",
@@ -299,11 +299,11 @@
 ],
 [
 "Switzerland",
-"#D3B240"
+"#b396d6"
 ],
 [
 "Germany",
-"#D8AE3E"
+"#b8e2ff"
 ],
 [
 "Italy",
@@ -402,7 +402,7 @@
 ],
 [
 "Bahrain",
-"#3F47C9"
+"#87c9bc"
 ],
 [
 "Kazakhstan",
@@ -514,7 +514,7 @@
 ],
 [
 "United Kingdom",
-"#C1BA47"
+"#e7c5e8"
 ],
 [
 "France",
@@ -526,11 +526,11 @@
 ],
 [
 "Switzerland",
-"#D3B240"
+"#b396d6"
 ],
 [
 "Germany",
-"#D8AE3E"
+"#b8e2ff"
 ],
 [
 "Italy",
@@ -593,7 +593,7 @@
 "#DB2823"
 ]
 ],
-"title": "Country",
+"title": "Country Name",
 "type": "categorical"
 },
 {
@@ -629,7 +629,7 @@
 ],
 [
 "Bahrain",
-"#4C23AF"
+"#87c9bc"
 ],
 [
 "Kazakhstan",
@@ -865,7 +865,7 @@
 ],
 [
 "Switzerland",
-"#03fcdf"
+"#b396d6"
 ],
 [
 "Lucerne",
@@ -945,7 +945,7 @@
 ],
 [
 "Germany",
-"#ce95f0"
+"#b8e2ff"
 ],
 [
 "Thuringia",
