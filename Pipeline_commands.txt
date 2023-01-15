@@ -1,0 +1,36 @@
+##RUNNING FASTQC
+
+fastqc TESTFILE1_S26_L001_R1_001.fastq.gz
+fastqc TESTFILE1_S26_L001_R2_001.fastq.gz
+
+##RUNNING TRIMMOMATIC
+
+TrimmomaticPE TESTFILE1_S26_L001_R1_001.fastq.gz TESTFILE1_S26_L001_R2_001.fastq.gz TESTFILE1_S26_fwd_paired_001.fastq.gz TESTFILE1_S26_fwd_unpaired_001.fastq.gz TESTFILE1_S26_rev_paired_001.fastq.gz TESTFILE1_S26_rev_unpaired_001.fastq.gz ILLUMINACLIP:/usr/share/trimmomatic/TruSeq3-PE.fa:2:30:10  SLIDINGWINDOW:4:30 MINLEN:35
+
+##BUILD HISAT2 INDEX FILES
+
+hisat2-build NC_045512.2.fasta NC_045512.2.fasta
+
+##RUNNING HISAT2 ALIGNMENT
+
+hisat2 -x NC_045512.2.fasta -1 TESTFILE1_S26_fwd_paired_001.fastq.gz -2 TESTFILE1_S26_rev_paired_001.fastq.gz -S TESTFILE1_S26_aligned.sam -p 16 --summary-file TESTFILE1_S26_hisat.log
+
+
+##POST-PROCESSING WITH SAMTOOLS
+
+samtools sort TESTFILE1_S26_aligned.sam -o TESTFILE1_S26_aligned.bam
+samtools index TESTFILE1_S26_aligned.bam
+
+
+##CALL VARIANTS USING VARSCAN
+
+samtools mpileup -f NC_045512.2.fasta TESTFILE1_S26_aligned.bam > TESTFILE1_S26.pileup
+ 
+varscan mpileup2cns TESTFILE1_S26.pileup --output-vcf 1 --variants > TESTFILE1_S26.vcf
+
+
+##GENERATE CONSENSUS FASTA SEQUENCE
+
+samtools mpileup -uf NC_045512.2.fasta TESTFILE1_S26_aligned.bam| bcftools call -c | vcfutils.pl vcf2fq > TESTFILE1_S26_consensus.fq
+ 
+seqtk seq -aQ64 -q20 -n N TESTFILE1_S26_consensus.fq > TESTFILE1_S26_consensus.fasta
